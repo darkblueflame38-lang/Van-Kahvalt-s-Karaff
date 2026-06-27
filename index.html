@@ -10,7 +10,6 @@
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
-        /* Mobil yatay kaydırma çubuğunu gizle */
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -34,13 +33,134 @@
     <nav class="sticky top-0 bg-white/90 backdrop-blur-md shadow-sm border-b border-stone-200/80 z-50">
         <div class="max-w-6xl mx-auto px-4">
             <div id="tab-container" class="flex space-x-2 py-4 overflow-x-auto no-scrollbar scroll-smooth">
-                </div>
+                <button onclick="filterMenu('all', this)" class="tab-btn px-4 py-2 text-sm font-medium rounded-full transition-all bg-amber-600 text-white shadow-sm whitespace-nowrap">Hepsi</button>
+                <button onclick="filterMenu('kahvalti', this)" class="tab-btn px-4 py-2 text-sm font-medium rounded-full transition-all bg-stone-100 text-stone-600 hover:bg-stone-200 whitespace-nowrap">Kahvaltı</button>
+                <button onclick="filterMenu('corba', this)" class="tab-btn px-4 py-2 text-sm font-medium rounded-full transition-all bg-stone-100 text-stone-600 hover:bg-stone-200 whitespace-nowrap">Çorbalar</button>
+                <button onclick="filterMenu('salata', this)" class="tab-btn px-4 py-2 text-sm font-medium rounded-full transition-all bg-stone-100 text-stone-600 hover:bg-stone-200 whitespace-nowrap">Salatalar & Bowl</button>
+                <button onclick="filterMenu('makarna', this)" class="tab-btn px-4 py-2 text-sm font-medium rounded-full transition-all bg-stone-100 text-stone-600 hover:bg-stone-200 whitespace-nowrap">Makarnalar</button>
+                <button onclick="filterMenu('anayemek', this)" class="tab-btn px-4 py-2 text-sm font-medium rounded-full transition-all bg-stone-100 text-stone-600 hover:bg-stone-200 whitespace-nowrap">Ana Yemekler & Kebaplar</button>
+                <button onclick="filterMenu('pizza', this)" class="tab-btn px-4 py-2 text-sm font-medium rounded-full transition-all bg-stone-100 text-stone-600 hover:bg-stone-200 whitespace-nowrap">Pizzalar</button>
+            </div>
         </div>
     </nav>
 
-    <main class="max-w-4xl mx-auto px-4 mt-8">
-        <div id="menu-container" class="space-y-10">
+    <main class="max-w-4xl mx-auto px-4 mt-8 space-y-10">
+
+        <section id="sec-kahvalti" class="menu-section bg-white p-6 rounded-2xl shadow-sm border border-stone-100 scroll-mt-24">
+            <h2 class="text-xl font-bold text-stone-900 border-b pb-3 mb-6 flex items-center justify-between">
+                <span>Kahvaltı</span>
+                <span class="text-xs font-normal text-stone-400">21 Çeşit</span>
+            </h2>
+            <div class="grid gap-4 md:grid-cols-2">
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Van Kahvaltısı (Kişi Başı)</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">400 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Tabakta Kahvaltı</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">350 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Peynirli Gözleme</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">190 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Kaşarlı Gözleme</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">190 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Patatesli Gözleme</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">190 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Ispanaklı Gözleme</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">190 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Sucuklu Kaşarlı Gözleme</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">220 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Kavurmalı Kaşarlı Gözleme</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">250 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Yumurtalı Kaşarlı Gözleme</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">190 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Sigara Böreği</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">190 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Sade Omlet</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">220 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Kaşarlı Omlet</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">250 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Mantarlı Omlet</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">250 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Mantarlı Kaşarlı Omlet</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">250 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Ispanaklı Omlet</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">250 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Sucuklu Kaşarlı Omlet</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">280 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Sucuklu Yumurta</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">320 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Kavurmalı Yumurta</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">350 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Kaşarlı Tost</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">200 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Sucuklu Kaşarlı Tost</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">230 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Kavurmalı Kaşarlı Tost</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">250 ₺</div></div>
             </div>
+        </section>
+
+        <section id="sec-corba" class="menu-section bg-white p-6 rounded-2xl shadow-sm border border-stone-100 scroll-mt-24">
+            <h2 class="text-xl font-bold text-stone-900 border-b pb-3 mb-6 flex items-center justify-between">
+                <span>Çorbalar</span>
+                <span class="text-xs font-normal text-stone-400">2 Çeşit</span>
+            </h2>
+            <div class="grid gap-4 md:grid-cols-2">
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Tavuk Çorbası</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">250 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Mercimek Çorbası</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">230 ₺</div></div>
+            </div>
+        </section>
+
+        <section id="sec-salata" class="menu-section bg-white p-6 rounded-2xl shadow-sm border border-stone-100 scroll-mt-24">
+            <h2 class="text-xl font-bold text-stone-900 border-b pb-3 mb-6 flex items-center justify-between">
+                <span>Salatalar & Bowl</span>
+                <span class="text-xs font-normal text-stone-400">7 Çeşit</span>
+            </h2>
+            <div class="grid gap-4 md:grid-cols-2">
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Karışık Salata</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">250 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Çoban Salata</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">250 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Ton Balıklı Salata</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">380 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Yunan Salatası</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">380 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Somon Bowl</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">450 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Hellim Bowl</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">300 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Karides Bowl</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">570 ₺</div></div>
+            </div>
+        </section>
+
+        <section id="sec-makarna" class="menu-section bg-white p-6 rounded-2xl shadow-sm border border-stone-100 scroll-mt-24">
+            <h2 class="text-xl font-bold text-stone-900 border-b pb-3 mb-6 flex items-center justify-between">
+                <span>Makarnalar</span>
+                <span class="text-xs font-normal text-stone-400">6 Çeşit</span>
+            </h2>
+            <div class="grid gap-4 md:grid-cols-2">
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Spagetti Bolonez</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">300 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Penne Bolonez</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">300 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Ton Balıklı Penne</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">300 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Tavuklu Kremalı Penne</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">300 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Somonlu Penne</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">350 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Karaff Spesiyal</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">350 ₺</div></div>
+            </div>
+        </section>
+
+        <section id="sec-anayemek" class="menu-section bg-white p-6 rounded-2xl shadow-sm border border-stone-100 scroll-mt-24">
+            <h2 class="text-xl font-bold text-stone-900 border-b pb-3 mb-6 flex items-center justify-between">
+                <span>Ana Yemekler & Kebaplar</span>
+                <span class="text-xs font-normal text-stone-400">17 Çeşit</span>
+            </h2>
+            <div class="grid gap-4 md:grid-cols-2">
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Kuzu Pirzola</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">750 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Kuzu Şiş</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">570 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Dana Şiş</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">500 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Izgara Köfte</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">450 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Osmanlı Dana (Güveç)</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">450 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Osmanlı Kuzu (Güveç)</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">500 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Osmanlı Tavuk (Güveç)</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">350 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Tavuk Izgara</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">350 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Tavuk Şiş</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">350 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Barbekü Soslu Tavuk</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">350 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Köri Soslu Tavuk</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">350 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Kremalı Kekikli Tavuk</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">350 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Çipura</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">400 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Somon</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">600 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Jumbo Karides</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">700 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Hamburger</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">350 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Cheeseburger</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">350 ₺</div></div>
+            </div>
+        </section>
+
+        <section id="sec-pizza" class="menu-section bg-white p-6 rounded-2xl shadow-sm border border-stone-100 scroll-mt-24">
+            <h2 class="text-xl font-bold text-stone-900 border-b pb-3 mb-6 flex items-center justify-between">
+                <span>Pizzalar</span>
+                <span class="text-xs font-normal text-stone-400">8 Çeşit</span>
+            </h2>
+            <div class="grid gap-4 md:grid-cols-2">
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Pizza Margarita</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">250 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">4 Peynirli Pizza</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">280 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Sucuklu Pizza</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">280 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Karaff Pizza</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">300 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Ton Balıklı Pizza</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">300 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Somonlu Pizza</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">300 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Hawaii Pizza</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">300 ₺</div></div>
+                <div class="flex justify-between items-end py-2 group"><p class="font-medium text-stone-800 group-hover:text-amber-700 transition-colors">Vejetaryen Pizza</p><div class="flex-grow border-b border-dashed border-stone-200 mb-1 mx-2"></div><div class="text-right font-semibold text-stone-900 bg-stone-50 px-2.5 py-1 rounded-md border border-stone-100">300 ₺</div></div>
+            </div>
+        </section>
+
     </main>
 
     <footer class="text-center text-xs text-stone-400 mt-16 pt-6 border-t border-stone-200">
@@ -48,58 +168,28 @@
     </footer>
 
     <script>
-        // Görselden çıkarılan tam menü verisi
-        const menuData = {
-            "kahvalti": {
-                title: "Kahvaltı",
-                items: [
-                    { name: "Van Kahvaltısı (Kişi Başı)", price: "400 ₺" },
-                    { name: "Tabakta Kahvaltı", price: "350 ₺" },
-                    { name: "Peynirli Gözleme", price: "190 ₺" },
-                    { name: "Kaşarlı Gözleme", price: "190 ₺" },
-                    { name: "Patatesli Gözleme", price: "190 ₺" },
-                    { name: "Ispanaklı Gözleme", price: "190 ₺" },
-                    { name: "Sucuklu Kaşarlı Gözleme", price: "220 ₺" },
-                    { name: "Kavurmalı Kaşarlı Gözleme", price: "250 ₺" },
-                    { name: "Yumurtalı Kaşarlı Gözleme", price: "190 ₺" },
-                    { name: "Sigara Böreği", price: "190 ₺" },
-                    { name: "Sade Omlet", price: "220 ₺" },
-                    { name: "Kaşarlı Omlet", price: "250 ₺" },
-                    { name: "Mantarlı Omlet", price: "250 ₺" },
-                    { name: "Mantarlı Kaşarlı Omlet", price: "250 ₺" },
-                    { name: "Ispanaklı Omlet", price: "250 ₺" },
-                    { name: "Sucuklu Kaşarlı Omlet", price: "280 ₺" },
-                    { name: "Sucuklu Yumurta", price: "320 ₺" },
-                    { name: "Kavurmalı Yumurta", price: "350 ₺" },
-                    { name: "Kaşarlı Tost", price: "200 ₺" },
-                    { name: "Sucuklu Kaşarlı Tost", price: "230 ₺" },
-                    { name: "Kavurmalı Kaşarlı Tost", price: "250 ₺" }
-                ]
-            },
-            "corba": {
-                title: "Çorbalar",
-                items: [
-                    { name: "Tavuk Çorbası", price: "250 ₺" },
-                    { name: "Mercimek Çorbası", price: "230 ₺" }
-                ]
-            },
-            "salata": {
-                title: "Salatalar & Bowl",
-                items: [
-                    { name: "Karışık Salata", price: "250 ₺" },
-                    { name: "Çoban Salata", price: "250 ₺" },
-                    { name: "Ton Balıklı Salata", price: "380 ₺" },
-                    { name: "Yunan Salatası", price: "380 ₺" },
-                    { name: "Somon Bowl", price: "450 ₺" },
-                    { name: "Hellim Bowl", price: "300 ₺" },
-                    { name: "Karides Bowl", price: "570 ₺" }
-                ]
-            },
-            "makarna": {
-                title: "Makarnalar",
-                items: [
-                    { name: "Spagetti Bolonez", price: "300 ₺" },
-                    { name: "Penne Bolonez", price: "300 ₺" },
-                    { name: "Ton Balıklı Penne", price: "300 ₺" },
-                    { name: "Tavuklu Kremalı Penne", price: "300 ₺" },
-                    { name: "Somonlu Penne
+        function filterMenu(category, element) {
+            // Buton stillerini güncelle
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-amber-600', 'text-white', 'shadow-sm');
+                btn.classList.add('bg-stone-100', 'text-stone-600', 'hover:bg-stone-200');
+            });
+            element.classList.remove('bg-stone-100', 'text-stone-600', 'hover:bg-stone-200');
+            element.classList.add('bg-amber-600', 'text-white', 'shadow-sm');
+
+            // Kategorileri göster/gizle
+            document.querySelectorAll('.menu-section').forEach(section => {
+                if (category === 'all') {
+                    section.classList.remove('hidden');
+                } else {
+                    if (section.id === 'sec-' + category) {
+                        section.classList.remove('hidden');
+                    } else {
+                        section.classList.add('hidden');
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
